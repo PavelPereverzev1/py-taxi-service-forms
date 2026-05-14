@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
 
-</body>
-</html>
+{% block content %}
+<div class="container mt-4">
+    <h2>{% if object %}Update{% else %}Create{% endif %} Car</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+
+      {{ form|crispy }}
+
+      <div class="mt-3">
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="{% url 'taxi:car-list' %}" class="btn btn-secondary">Cancel</a>
+      </div>
+    </form>
+</div>
+{% endblock %}
