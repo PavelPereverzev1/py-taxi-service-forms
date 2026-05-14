@@ -17,6 +17,6 @@
     <a href="{% url 'taxi:car-delete' pk=car.id %}" class="btn btn-danger">
         Delete Car
     </a>
-    <a href="{% url 'taxi:car-list' %}" class="btn btn-link">Back to list</a>
+    <a href="#" onclick="window.history.back(); return false;" class="btn btn-link">Back to list</a>
   </div>
 {% endblock %}
