@@ -5,6 +5,6 @@
     {% csrf_token %}
     <p>Are you sure you want to delete "{{ object.name }}"?</p>
     <button type="submit" class="btn btn-danger">Confirm</button>
-    <a href="{% url 'taxi:manufacturer-list' %}">Cancel</a>
+    <a href="#" onclick="window.history.back(); return false;">Cancel</a>
   </form>
 {% endblock %}
